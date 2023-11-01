@@ -1,0 +1,4 @@
+<form [formGroup]="form">
+  <input type="text" placeholder="Search" formControlName="search">
+  <button [disabled]="form.invalid" (click)="add()">Search</button>
+</form>
