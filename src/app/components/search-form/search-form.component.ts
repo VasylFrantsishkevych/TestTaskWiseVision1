@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SearchService} from "../../services";
 
@@ -9,6 +9,10 @@ import {SearchService} from "../../services";
 })
 export class SearchFormComponent implements OnInit {
   form: FormGroup;
+  searchData: string;
+
+  @Output()
+  outputSearchData = new EventEmitter()
 
   constructor(private searchService:SearchService) {
     this.initForm()
@@ -24,8 +28,13 @@ export class SearchFormComponent implements OnInit {
   }
 
   add(): void {
-    const searchText =  this.form.value.search
-    this.searchService.getSearchRepositories(searchText).subscribe(value =>
-      console.log(value.items))
+    this.searchData =  this.form.value.search
+    // this.searchService.getSearchRepositories(searchText).subscribe(value =>
+      console.log(this.searchData)
+    this.form.reset();
+  }
+
+  lift(): void {
+    this.outputSearchData.emit(this.searchData)
   }
 }

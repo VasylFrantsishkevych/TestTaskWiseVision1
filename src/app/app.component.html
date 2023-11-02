@@ -1,1 +1,2 @@
-<app-search-form></app-search-form>
+<app-search-form (outputSearchData)="getSearchData($event)"></app-search-form>
+<app-repositories [searchData]="searchData"></app-repositories>
