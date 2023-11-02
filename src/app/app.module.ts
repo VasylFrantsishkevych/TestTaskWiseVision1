@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SearchRepositoriesComponent } from './components/search-repositories/search-repositories.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { RepositoryComponent } from './components/repository/repository.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchFormComponent,
-    RepositoriesComponent,
+    SearchRepositoriesComponent,
+    RepositoryComponent,
   ],
     imports: [
         BrowserModule,
