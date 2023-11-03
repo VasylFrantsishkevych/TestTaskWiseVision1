@@ -1,6 +1,23 @@
-<form [formGroup]="form">
-  <input type="text" placeholder="Search" formControlName="search">
-  <button [disabled]="form.invalid" (click)="search()">Search</button>
-</form>
-<hr>
-<app-repository *ngFor="let repository of repositories" [repository]="repository"></app-repository>
+<div class="container">
+  <div class="wrap">
+    <div class="container-form">
+      <h2>Search GirHub repositories</h2>
+        <form [formGroup]="form">
+          <mat-form-field [style.width.px]="450" appearance="outline">
+            <mat-label>Name Repositories</mat-label>
+            <input matInput type="text" formControlName="search">
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" [style.height.px]="55.99" [disabled]="form.invalid" (click)="search()">Search</button>
+        </form>
+    </div>
+    <mat-accordion>
+      <app-repository *ngFor="let repository of repositories" [repository]="repository"></app-repository>
+    </mat-accordion>
+    <mat-paginator [length]="100"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

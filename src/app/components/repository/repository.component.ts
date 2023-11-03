@@ -10,5 +10,6 @@ export class RepositoryComponent {
 
   @Input()
   repository: IItem;
+  panelOpenState: boolean = false;
 
 }

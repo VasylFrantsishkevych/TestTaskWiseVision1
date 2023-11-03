@@ -11,6 +11,7 @@ import {IItem} from "../../interfaces";
 export class SearchRepositoriesComponent implements OnInit {
   form: FormGroup;
   searchText: string;
+  totalCount: number;
   repositories: IItem[];
 
 
@@ -32,6 +33,7 @@ export class SearchRepositoriesComponent implements OnInit {
       this.searchService.getSearchRepositories(this.searchText).subscribe(value => {
       console.log(value);
       this.repositories = value.items;
+      this.totalCount = value.total_count;
     });
     this.form.reset();
   }

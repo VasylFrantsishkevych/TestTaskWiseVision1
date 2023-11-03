@@ -6,6 +6,12 @@ import { SearchRepositoriesComponent } from './components/search-repositories/se
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { RepositoryComponent } from './components/repository/repository.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -14,11 +20,17 @@ import { RepositoryComponent } from './components/repository/repository.componen
     SearchRepositoriesComponent,
     RepositoryComponent,
   ],
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatPaginatorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

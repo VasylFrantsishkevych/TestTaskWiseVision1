@@ -11,4 +11,7 @@ export interface IItem {
   updated_at: string,
   pushed_at: string,
   language: string,
+  stargazers_count: number,
+  description: string,
+  topics: string[],
 }
