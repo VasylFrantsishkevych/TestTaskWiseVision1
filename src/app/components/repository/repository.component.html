@@ -11,7 +11,7 @@
     <span *ngFor="let topic of repository.topics">{{topic}}</span>
   </div>
   <div class="info">
-    <div>Language: <span>{{repository.language}}</span></div>
+    <div *ngIf="repository.language">Language: <span>{{repository.language}}</span></div>
     <div>Star: <span>{{repository.stargazers_count}}</span></div>
     <div>Create: <span>{{repository.created_at.slice(0, 10)}}</span></div>
   </div>
