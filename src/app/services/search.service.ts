@@ -12,7 +12,7 @@ export class SearchService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getSearchRepositories(searchText: string, page: number = 1): Observable<IRepository> {
-    return  this.httpClient.get<IRepository>(`${urls.search}${searchText}`, {params: {page}})
+  getSearchRepositories(searchText: string): Observable<IRepository> {
+    return  this.httpClient.get<IRepository>(`${urls.search}${searchText}`)
   }
 }
