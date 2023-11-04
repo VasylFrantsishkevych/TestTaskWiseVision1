@@ -14,9 +14,5 @@
     <mat-accordion>
       <app-repository *ngFor="let repository of repositories" [repository]="repository"></app-repository>
     </mat-accordion>
-    <mat-paginator [length]="totalCount"
-                   [pageSize]="30"
-                   aria-label="Select page">
-    </mat-paginator>
   </div>
 </div>
